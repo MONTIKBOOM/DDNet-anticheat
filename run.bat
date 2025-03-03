@@ -1,6 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
-TITLE DDNet Anti-Cheat v1.1
+TITLE DDNet Anti-Cheat v1.0
 
 set "BAT_DIR=%~dp0"
 set "EVERYTHING_PATH=%BAT_DIR%data\Everything\Everything.exe"
@@ -19,7 +19,7 @@ set /a total_runs+=1
 :MAIN_MENU
 cls
 echo ===========================================
-echo          DDNet Cheat Scanner v1.1
+echo          DDNet Cheat Scanner v1.0
 echo      Developed by Wranked
 echo      for discord.gg/6SHMYAt3rF
 echo 	[BETA] No data is being saved
@@ -132,7 +132,9 @@ if errorlevel 1 (
     echo         Config File Integrity Check
     echo ===========================================
     echo No unauthorized modifications detected
-    echo Last modified: %%~tF
+    for %%F in ("%CONFIG_FILE%") do (
+        echo Last modified: %%~tF
+    )
     echo ===========================================
 )
 pause
